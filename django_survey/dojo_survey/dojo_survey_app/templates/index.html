@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <form action="/result" method="POST">
+        {% csrf_token %}
+        <h2>
+            Your name: <input type="text" name="name">
+        </h2>
+        <h2>Your Gender:
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+        </h2>
+        <h2>Dojo Location: 
+            <select name="location" id="location">
+                <option value="sanjose">San Jose</option>
+                <option value="tirana">Tirana</option>
+                <option value="berlin">Berlin</option>
+            </select>
+        </h2>
+        <h2>Favorite Language: 
+            <select name="language" id="language">
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="mern">Mern</option>
+            </select>
+        </h2>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
